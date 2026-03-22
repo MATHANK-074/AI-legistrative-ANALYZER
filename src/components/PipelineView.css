@@ -1,0 +1,53 @@
+.pipeline-view { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+
+.pipeline-hero { margin-bottom: 36px; max-width: 680px; }
+.pipeline-title { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 900; letter-spacing: -0.03em; margin-bottom: 12px; }
+.pipeline-sub { font-size: 1rem; color: var(--text-secondary); line-height: 1.65; }
+
+.metrics-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px; margin-bottom: 40px;
+}
+.metric-tile { padding: 18px; text-align: center; cursor: default; }
+.metric-val   { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.05em; }
+.metric-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 5px; line-height: 1.4; }
+
+.pipeline-steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; }
+.pipeline-step  { display: flex; align-items: flex-start; gap: 20px; }
+.step-connector { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.step-icon-wrap {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(108,99,255,0.15); border: 2px solid rgba(108,99,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.step-line {
+  width: 2px; flex: 1; min-height: 28px;
+  background: linear-gradient(to bottom, rgba(108,99,255,0.4), rgba(108,99,255,0.1));
+  margin: 6px 0;
+}
+
+.step-content {
+  flex: 1; padding: 20px 22px; margin-bottom: 16px;
+}
+.step-header   { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.step-num      { font-size: 1.4rem; font-weight: 900; }
+.step-title    { font-size: 1rem; font-weight: 700; }
+.step-detail   { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+.step-stat     { padding: 8px 14px; border-radius: var(--radius-sm); border: 1px solid; font-size: 0.82rem; font-weight: 600; display: inline-block; }
+
+.arch-card { padding: 28px; }
+.arch-diagram { overflow-x: auto; }
+.arch-pre {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem; line-height: 1.65;
+  color: var(--text-secondary);
+  white-space: pre;
+}
+
+@media(max-width: 600px) {
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .pipeline-step { flex-direction: column; }
+  .step-connector { flex-direction: row; }
+  .step-line { width: 28px; height: 2px; flex: none; min-height: unset; }
+}

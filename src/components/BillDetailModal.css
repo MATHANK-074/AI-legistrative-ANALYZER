@@ -1,0 +1,98 @@
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  animation: fadeInUp 0.2s ease;
+}
+.modal-panel {
+  width: 100%; max-width: 740px;
+  max-height: 90vh; overflow-y: auto;
+  padding: 32px;
+  position: relative;
+  border-radius: var(--radius-xl) !important;
+  display: flex; flex-direction: column; gap: 22px;
+}
+.modal-close {
+  position: absolute; top: 18px; right: 18px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,0.07); border: 1px solid var(--glass-border);
+  color: var(--text-secondary); cursor: pointer;
+  font-size: 0.9rem; display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.modal-close:hover { background: rgba(239,68,68,0.2); color: var(--accent-red); border-color: var(--accent-red); }
+
+.modal-header { display: flex; flex-direction: column; gap: 10px; }
+.modal-title  { font-size: 1.4rem; font-weight: 800; line-height: 1.3; }
+.modal-ministry { font-size: 0.82rem; color: var(--text-muted); }
+
+.modal-highlight {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: rgba(108,99,255,0.1);
+  border: 1px solid rgba(108,99,255,0.25);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+.modal-highlight-icon { font-size: 1.3rem; flex-shrink: 0; }
+.modal-highlight p { font-size: 1rem; font-weight: 500; line-height: 1.55; color: var(--text-primary); }
+
+.modal-section { display: flex; flex-direction: column; gap: 12px; }
+.modal-section-title { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+
+.modal-keypoints { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.modal-keypoint {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;
+}
+.keypoint-num {
+  min-width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(108,99,255,0.2); border: 1px solid rgba(108,99,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 700; color: var(--accent-indigo);
+  flex-shrink: 0;
+}
+
+.modal-impact {
+  background: rgba(255,107,43,0.06);
+  border: 1px solid rgba(255,107,43,0.2);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.modal-impact-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+.modal-dates { display: flex; gap: 16px; flex-wrap: wrap; }
+.date-item { display: flex; flex-direction: column; gap: 3px; }
+.date-item .font-semibold { font-size: 0.9rem; }
+
+/* Efficiency */
+.modal-efficiency {
+  padding: 22px !important;
+  background: rgba(245,158,11,0.04) !important;
+  border-color: rgba(245,158,11,0.15) !important;
+}
+.efficiency-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
+.eff-item { text-align: center; }
+.eff-value { font-size: 1.5rem; font-weight: 800; }
+.eff-label { font-size: 0.68rem; color: var(--text-muted); margin-top: 4px; }
+
+.eff-bar-wrap { display: flex; flex-direction: column; gap: 6px; }
+.eff-bar-label { display: flex; justify-content: space-between; align-items: center; }
+.eff-score { font-weight: 700; color: var(--accent-amber); font-size: 1rem; }
+.eff-bar-track { width: 100%; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+.eff-bar-fill  { height: 100%; background: var(--gradient-saffron); border-radius: 4px; transition: width 1s ease; }
+
+.eff-note {
+  font-size: 0.78rem; color: var(--accent-green);
+  background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 8px; padding: 8px 12px; margin-top: 10px;
+}
+
+.modal-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--glass-border); padding-top: 18px; }
+
+@media (max-width: 600px) {
+  .efficiency-grid { grid-template-columns: repeat(2, 1fr); }
+  .modal-panel { padding: 24px; }
+}
